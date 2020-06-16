@@ -1,10 +1,10 @@
 # Attacks-on-RSA
 
 ## Problem Statement : 
-Demonstrate and Implement 3 attacks on RSA CryptoSystem in C++
-1.Factorization of Public Key (n)
-2.Low Encryption Exponent Attack 
-3.Chosen Ciphertext Attack
+### Demonstrate and Implement 3 attacks on RSA CryptoSystem in C++. 
+ 	1.Factorization of Public Key (n) 
+ 	2.Low Encryption Exponent Attack 
+ 	3.Chosen Ciphertext Attack
 
 ## Solution Plan 
 
