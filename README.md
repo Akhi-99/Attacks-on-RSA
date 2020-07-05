@@ -9,7 +9,7 @@
 ## Solution Plan : 
 
 ## Factorization Attack:
-The strength of RSA lies on the fact that it is difficult to factorize a large composite integer. RSA's public key consists of the modulus n (n is the product of two large primes) and the encryption exponent e. The private key is the decryption exponent d such that e x d = 1 mod φ(n).<br>
+The strength of RSA lies on the fact that it is difficult to factorize a large composite integer. RSA's public key consists of the modulus n (n is the product of two large primes) and the encryption exponent e. The private key is the decryption exponent d such that e * d = 1 mod φ(n).<br>
 1. Iterative algorithm up to root n to find a factor and obtain the other by dividing it with n.<br>
 2. Since n is composed of primes and all primes are odd except 2, we optimized the algorithm 1 to odd primes.<br>
 3. Pollard Rho Algorithm, a prime factorization algorithm, particularly fast for a large composite number with small prime factors.<br>
