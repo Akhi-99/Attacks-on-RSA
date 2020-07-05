@@ -18,7 +18,7 @@ Once we have factored n, p and q values can be found. From p and q,  φ(n) can b
 This helps Eve to find the decryption exponent d, since it is the inverse of e with respect to φ(n) i.e by using the Extended Euclidean algorithm. Knowing d and n(public key), Eve can easily decrypt the ciphertext to know the original message.
 In order to prevent this attack, N must be at least 1024 bits.
 		
-
+![Factorization Time Graph](https://github.com/Akhi-99/Attacks-on-RSA/blob/master/Fact.png)
 
 	
 ## Low Encryption Exponent Attack:
