@@ -6,13 +6,13 @@
  	2.Low Encryption Exponent Attack 
  	3.Chosen Ciphertext Attack
 
-## Solution Plan 
+## Solution Plan : 
 
 ## Factorization Attack:
 The strength of RSA lies on the fact that it is difficult to factorize a large composite integer. RSA's public key consists of the modulus n (n is the product of two large primes) and the encryption exponent e. The private key is the decryption exponent d such that e x d = 1 mod φ(n).<br>
-1.Iterative algorithm up to root n to find a factor and obtain the other by dividing it with n.<br>
-2.Since n is composed of primes and all primes are odd except 2, we optimized the algorithm 1 to odd primes.<br>
-3.Pollard Rho Algorithm, a prime factorization algorithm, particularly fast for a large composite number with small prime factors.<br>
+1. Iterative algorithm up to root n to find a factor and obtain the other by dividing it with n.<br>
+2. Since n is composed of primes and all primes are odd except 2, we optimized the algorithm 1 to odd primes.<br>
+3. Pollard Rho Algorithm, a prime factorization algorithm, particularly fast for a large composite number with small prime factors.<br>
 Once we have factored n, p and q values can be found. From p and q,  φ(n) can be found as  φ(n) = (p-1)*(q-1).
 This helps Eve to find the decryption exponent d, since it is the inverse of e with respect to φ(n) i.e by using the Extended Euclidean algorithm. Knowing d and n(public key), Eve can easily decrypt the ciphertext to know the original message.
 In order to prevent this attack, N must be at least 1024 bits.
@@ -26,7 +26,7 @@ Alice sends the same message (m) to three different persons with different n val
 C1 = m<sup>3</sup> mod n1 <br>
 C2 = m<sup>3</sup> mod n2 <br>
 C3 = m<sup>3</sup> mod n3 <br>
-C= C1.n2.n3.((n2*n3)<sup>-1</sup> mod n1) + C2.n3.n1.((n3*n1)<sup>-1</sup> mod n2) + C3.n1.n2.((n1*n2)<sup>-1</sup> mod n3)
+C= C1.n2.n3.((n2.n3)<sup>-1</sup> mod n1) + C2.n3.n1.((n3.n1)<sup>-1</sup> mod n2) + C3.n1.n2.((n1.n2)<sup>-1</sup> mod n3)
 cube root of C gives the original message m.
 
 
