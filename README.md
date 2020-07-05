@@ -34,8 +34,8 @@ cube root of C gives the original message m.
 
 ## Chosen Cipher Text Attack
 
-Alice sends a message to Bob encrypted with Bob’s public key (c= m<sup>e</sup> mod n).
-Eve is a malicious person who chooses a ciphertext c. Eve encrypts c using a random constant r and sends the new encrypted message c’ to Bob (c’= c x r<sup>e</sup> mod n).
+Alice sends a message to Bob encrypted with Bob’s public key (c= m<sup>e</sup> mod n).<br>
+Eve is a malicious person who chooses a ciphertext c. Eve encrypts c using a random constant r and sends the new encrypted message c’ to Bob (c’= c x r<sup>e</sup> mod n).<br>
 Bob receives the message and tries to decrypt it but, fails to get the message. He sends the decrypted message (c’<sup>d</sup> mod n) to Alice stating that he did not understand it. Eve intervenes and decrypts it by the following computation.<br>
 c’<sup>d</sup> mod n = (c x r<sup>e</sup> mod n) <sup>d</sup> mod n = (m.r)<sup>e.d</sup> mod n = m.r mod n <br>
 Eve finds the multiplicative inverse of r, multiplies it with m.r mod n and gets the original message m sent by Alice.
