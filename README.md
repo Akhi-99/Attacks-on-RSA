@@ -26,17 +26,17 @@ Alice sends the same message (m) to three different persons with different n val
 C1 = m<sup>3</sup> mod n1 <br>
 C2 = m<sup>3</sup> mod n2 <br>
 C3 = m<sup>3</sup> mod n3 <br>
-C= C1*n2*n3*((n2*n3)<sup>-1</sup> mod n1)+C2*n3*n1*((n3*n1)<sup>-1</sup> mod n2)+C3*n1*n2*((n1*n2)<sup>-1</sup> mod n3)
+C= C1.n2.n3.((n2*n3)<sup>-1</sup> mod n1) + C2.n3.n1.((n3*n1)<sup>-1</sup> mod n2) + C3.n1.n2.((n1*n2)<sup>-1</sup> mod n3)
 cube root of C gives the original message m.
 
 
 
 ## Chosen Cipher Text Attack
 
-Alice sends a message to Bob encrypted with Bob’s public key (c= m ^ e mod n).
+Alice sends a message to Bob encrypted with Bob’s public key (c= m<sup>e</sup> mod n).
 Eve is a malicious person who chooses a ciphertext c. Eve encrypts c using a random constant r and sends the new encrypted message c’ to Bob (c’= c x r<sup>e</sup> mod n).
-Bob receives the message and tries to decrypt it but, fails to get the message. He sends the decrypted message (c’^d mod n) to Alice stating that he did not understand it. Eve intervenes and decrypts it by the following computation.<br>
-c’^d mod n = (c x r<sup>e</sup> mod n) ^ d mod n = (m.r)<sup>e.d</sup> mod n = m.r mod n <br>
+Bob receives the message and tries to decrypt it but, fails to get the message. He sends the decrypted message (c’<sup>d</sup> mod n) to Alice stating that he did not understand it. Eve intervenes and decrypts it by the following computation.<br>
+c’<sup>d</sup> mod n = (c x r<sup>e</sup> mod n) <sup>d</sup> mod n = (m.r)<sup>e.d</sup> mod n = m.r mod n <br>
 Eve finds the multiplicative inverse of r, multiplies it with m.r mod n and gets the original message m sent by Alice.
 
 
