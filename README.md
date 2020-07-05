@@ -13,6 +13,7 @@ The strength of RSA lies on the fact that it is difficult to factorize a large c
 1. Iterative algorithm up to root n to find a factor and obtain the other by dividing it with n.<br>
 2. Since n is composed of primes and all primes are odd except 2, we optimized the algorithm 1 to odd primes.<br>
 3. Pollard Rho Algorithm, a prime factorization algorithm, particularly fast for a large composite number with small prime factors.<br>
+
 Once we have factored n, p and q values can be found. From p and q,  φ(n) can be found as  φ(n) = (p-1)*(q-1).
 This helps Eve to find the decryption exponent d, since it is the inverse of e with respect to φ(n) i.e by using the Extended Euclidean algorithm. Knowing d and n(public key), Eve can easily decrypt the ciphertext to know the original message.
 In order to prevent this attack, N must be at least 1024 bits.
